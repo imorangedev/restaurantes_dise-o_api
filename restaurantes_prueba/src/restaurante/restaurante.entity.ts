@@ -1,4 +1,4 @@
-import { PlatoEntity } from 'src/plato/plato.entity';
+import { PlatoEntity } from '../plato/plato.entity';
 import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable } from 'typeorm';
 
 export enum TipoCocina {

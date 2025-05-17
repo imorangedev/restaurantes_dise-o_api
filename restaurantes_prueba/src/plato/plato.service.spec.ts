@@ -66,6 +66,7 @@ describe('PlatoService', () => {
             descripcion: faker.lorem.paragraph(),
             precio: parseInt(faker.commerce.price()),
             categoriaPlato: CategoriaPlato.ENTRADA,
+            restaurantes: [],
         };
 
         const result: PlatoEntity = await service.create(plato);

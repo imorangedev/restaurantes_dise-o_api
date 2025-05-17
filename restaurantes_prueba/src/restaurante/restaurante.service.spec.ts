@@ -65,6 +65,7 @@ describe('RestauranteService', () => {
         direccion: faker.location.streetAddress(),
         tipoCocina: TipoCocina.NINGUNA,
         paginaWeb: faker.internet.url(),
+        platos: [],
     };
 
     const newRestaurant: RestauranteEntity = await service.create(restaurante);

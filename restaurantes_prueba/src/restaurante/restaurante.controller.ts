@@ -6,7 +6,7 @@ import { RestauranteDto } from './restaurante.dto';
 import { RestauranteEntity, TipoCocina } from './restaurante.entity';
 import { plainToInstance } from 'class-transformer';
 
-@Controller('restaurante')
+@Controller('restaurants')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class RestauranteController {
 

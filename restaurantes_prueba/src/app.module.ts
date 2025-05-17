@@ -5,9 +5,9 @@ import { RestauranteModule } from './restaurante/restaurante.module';
 import { TypeOrmDevConfig } from './shared/testing-utils/typeorm-dev-config';
 import { PlatoModule } from './plato/plato.module';
 import { RestaurantePlatoModule } from './restaurante-plato/restaurante-plato.module';
-import { PlatoController } from './plato/plato.controller';
-import { RestauranteController } from './restaurante/restaurante.controller';
-import { RestaurantePlatoController } from './restaurante-plato/restaurante-plato.controller';
+import { RestauranteEntity } from './restaurante/restaurante.entity';
+import { PlatoEntity } from './plato/plato.entity';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 
 @Module({
@@ -15,17 +15,17 @@ import { RestaurantePlatoController } from './restaurante-plato/restaurante-plat
     RestauranteModule,
     PlatoModule,
     RestaurantePlatoModule,
-    // TypeOrmModule.forRoot({
-    //   type: 'postgres',
-    //   host: 'localhost',
-    //   port: 5432,
-    //   username: 'postgres',
-    //   password: 'postgres',
-    //   database: 'restaurantes',
-    //   entities: [RestauranteEntity, ProductoEntity, RecetaEntity, PaisEntity, CulturaGastronomicaEntity, ],
-    //   synchronize: true,
-    // }),
-    ...TypeOrmDevConfig(),
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: 'postgres',
+      password: 'postgres',
+      database: 'restaurantes',
+      entities: [RestauranteEntity, PlatoEntity ],
+      synchronize: true,
+    }),
+    // ...TypeOrmDevConfig(),
   ],
   controllers: [
     AppController,

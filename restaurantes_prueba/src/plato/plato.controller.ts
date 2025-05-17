@@ -6,7 +6,7 @@ import { PlatoDto } from './plato.dto';
 import { PlatoEntity, CategoriaPlato } from './plato.entity';
 import { plainToInstance } from 'class-transformer';
 
-@Controller('plato')
+@Controller('dishes')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class PlatoController {
 

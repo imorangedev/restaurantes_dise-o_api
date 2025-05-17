@@ -9,12 +9,12 @@ import { PlatoEntity } from '../plato/plato.entity';
 import { PlatoDto } from '../plato/plato.dto';
 
 
-@Controller('receta-producto')
+@Controller('restaurants')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class RestaurantePlatoController {
     constructor(private readonly restaurantePlatoService: RestaurantePlatoService) { }
 
-    @Post(':restauranteId/platos/:platoId')
+    @Post(':restauranteId/dishes/:platoId')
     async addDishToRestaurante(
         @Param('restauranteId') restauranteId: number,
         @Param('platoId') platoId: number,
@@ -22,14 +22,14 @@ export class RestaurantePlatoController {
         return await this.restaurantePlatoService.addDishToRestaurante(restauranteId, platoId);
     }
 
-    @Get(':restauranteId/platos')
+    @Get(':restauranteId/dishes')
     async findDishesFromRestaurante(
         @Param('restauranteId') restauranteId: number,
     ): Promise<PlatoEntity[]> {
         return await this.restaurantePlatoService.findDishesFromRestaurante(restauranteId);
     }
 
-    @Get(':restauranteId/platos/:platoId')
+    @Get(':restauranteId/dishes/:platoId')
     async findDishFromRestaurante(
         @Param('restauranteId') restauranteId: number,
         @Param('platoId') platoId: number,
@@ -37,7 +37,7 @@ export class RestaurantePlatoController {
         return await this.restaurantePlatoService.findDishFromRestaurante(restauranteId, platoId);
     }
 
-    @Put(':restauranteId/platos/:platoId')
+    @Put(':restauranteId/dishes/:platoId')
     async updateDishFromRestaurante(
         @Param('restauranteId') restauranteId: number,
         @Param('platoId') platoId: number,
@@ -47,7 +47,7 @@ export class RestaurantePlatoController {
         return await this.restaurantePlatoService.updateDishFromRestaurante(restauranteId, platoId, plato);
     }
 
-    @Put(':restauranteId/platos')
+    @Put(':restauranteId/dishes')
     async updateDishesFromRestaurante(
         @Param('restauranteId') restauranteId: number,
         @Body() platosDto: PlatoDto[],
@@ -56,7 +56,7 @@ export class RestaurantePlatoController {
         return await this.restaurantePlatoService.updateDishesFromRestaurante(restauranteId, platos);
     }
 
-    @Delete(':restauranteId/platos/:platoId')
+    @Delete(':restauranteId/dish/:platoId')
     @HttpCode(204)
     async deleteDishFromRestaurante(
         @Param('restauranteId') restauranteId: number,

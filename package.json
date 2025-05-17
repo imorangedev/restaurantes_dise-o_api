@@ -1,0 +1,23 @@
+{
+  "name": "restaurantes_dise-o_api",
+  "version": "1.0.0",
+  "description": "MISW4403 – Diseño y Construcción de APIs Parcial práctico",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imorangedev/restaurantes_dise-o_api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imorangedev/restaurantes_dise-o_api/issues"
+  },
+  "homepage": "https://github.com/imorangedev/restaurantes_dise-o_api#readme",
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.7"
+  }
+}

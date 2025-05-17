@@ -10,6 +10,7 @@ export enum TipoCocina {
     CHINA = 'CHINA',
 }
 
+@Entity('restaurante')
 export class RestauranteEntity {
     @PrimaryGeneratedColumn()
     id: number;

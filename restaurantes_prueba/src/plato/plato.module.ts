@@ -1,4 +1,7 @@
 import { Module } from '@nestjs/common';
+import { PlatoService } from './plato.service';
 
-@Module({})
+@Module({
+  providers: [PlatoService]
+})
 export class PlatoModule {}

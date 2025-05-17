@@ -8,6 +8,7 @@ export enum CategoriaPlato {
     BEBIDA = 'BEBIDA',
 }
 
+@Entity('plato')
 export class PlatoEntity {
     @PrimaryGeneratedColumn()
     id: number;
@@ -28,7 +29,8 @@ export class PlatoEntity {
     })
     categoriaPlato: CategoriaPlato;
 
+    // relacion con restaurante
     @ManyToMany(() => RestauranteEntity, (restaurante) => restaurante.platos)
-    restaurante: RestauranteEntity[];
+    restaurantes: RestauranteEntity[];
 
 }

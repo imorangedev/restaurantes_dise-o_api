@@ -1,5 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToMany } from 'typeorm';
-import { PlatoEntity } from '../plato/plato.entity';
+import { PlatoEntity } from 'src/plato/plato.entity';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable } from 'typeorm';
 
 export enum TipoCocina {
     NINGUNA = 'NINGUNA',
@@ -31,8 +31,9 @@ export class RestauranteEntity {
     @Column()
     paginaWeb: string;
 
-    //relacion con plato
-    @ManyToMany(() => PlatoEntity, (plato) => plato.restaurante)
+    // relacion con plato
+    @ManyToMany(() => PlatoEntity, (plato) => plato.restaurantes)
+    @JoinTable()
     platos: PlatoEntity[];
 
 }

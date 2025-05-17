@@ -29,9 +29,10 @@ import { RestaurantePlatoController } from './restaurante-plato/restaurante-plat
   ],
   controllers: [
     AppController,
-    PlatoController,
-    RestauranteController,
-    RestaurantePlatoController],
+    // PlatoController,
+    // RestauranteController,
+    // RestaurantePlatoController],
+  ],
   providers: [AppService],
 })
 export class AppModule { }
